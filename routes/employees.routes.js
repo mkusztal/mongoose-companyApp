@@ -41,7 +41,7 @@ router.post('/employees', async (req, res) => {
       department: department,
     });
     await newEmployee.save();
-    req.json({ message: 'OK' });
+    res.json({ message: 'OK' });
   } catch (err) {
     res.status(500).json({ message: err });
   }
@@ -64,7 +64,7 @@ router.put('/employees/:id', async (req, res) => {
           },
         }
       );
-      req.json({ message: 'OK' });
+      res.json({ message: 'OK' });
     }
   } catch (err) {
     res.status(500).json({ message: err });
