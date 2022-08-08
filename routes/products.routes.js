@@ -37,7 +37,7 @@ router.post('/products', async (req, res) => {
   try {
     const newProduct = new Product({ name: name, client: client });
     await newProduct.save();
-    req.json({ message: newProduct });
+    req.json({ message: 'OK' });
   } catch (err) {
     res.status(500).json({ message: err });
   }
@@ -57,7 +57,7 @@ router.put('/products/:id', async (req, res) => {
           $set: { client: client },
         }
       );
-      res.json({ message: pro });
+      res.json({ message: 'OK' });
     } else {
       res.status(404).json({ message: 'Not found...' });
     }
