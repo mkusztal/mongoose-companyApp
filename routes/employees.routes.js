@@ -33,12 +33,13 @@ router.get('/employees/:id', async (req, res) => {
 });
 
 router.post('/employees', async (req, res) => {
-  const { firstName, lastName } = req.body;
+  const { firstName, lastName, department } = req.body;
   try {
-    const newEmployee = new Employee(
-      { firstName: firstName },
-      { lastName: lastName }
-    );
+    const newEmployee = new Employee({
+      firstName: firstName,
+      lastName: lastName,
+      department: department,
+    });
     await newEmployee.save();
   } catch (err) {
     res.status(500).json({ message: err });
@@ -46,7 +47,7 @@ router.post('/employees', async (req, res) => {
 });
 
 router.put('/employees/:id', async (req, res) => {
-  const { firstName, lastName } = req.body;
+  const { firstName, lastName, department } = req.body;
   try {
     const emp = await Employee.findById(req.params.id);
     if (emp) {
@@ -55,10 +56,11 @@ router.put('/employees/:id', async (req, res) => {
           _id: req.params.id,
         },
         {
-          $set: { firstName: firstName },
-        },
-        {
-          $set: { lastName: lastName },
+          $set: {
+            firstName: firstName,
+            lastName: lastName,
+            department: department,
+          },
         }
       );
     }
