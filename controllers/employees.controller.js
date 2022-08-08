@@ -12,7 +12,7 @@ exports.getRandomEmployee = async (req, res) => {
   try {
     const count = await Employee.countDocuments();
     const rand = Math.floor(Math.random() * count);
-    const emp = await Employee.findOne().skip(rand);
+    const emp = await Employee.findOne().skip(rand).populate('department');
     if (!emp) res.status(404).json({ message: 'Not found...' });
     else res.json(emp);
   } catch (err) {
@@ -22,7 +22,7 @@ exports.getRandomEmployee = async (req, res) => {
 
 exports.getEmployeeById = async (req, res) => {
   try {
-    const emp = await Employee.findById(req.params.id);
+    const emp = await Employee.findById(req.params.id).populate('department');
     if (!emp) res.status(404).json({ message: 'Not found...' });
     else res.json(emp);
   } catch (err) {
@@ -48,7 +48,7 @@ exports.postEmployee = async (req, res) => {
 exports.putEmployee = async (req, res) => {
   const { firstName, lastName, department } = req.body;
   try {
-    const emp = await Employee.findById(req.params.id);
+    const emp = await Employee.findById(req.params.id).populate('department');
     if (emp) {
       await Employee.updateOne(
         {
