@@ -41,7 +41,7 @@ exports.postProduct = async (req, res) => {
   }
 };
 
-exports.putProduct = async (req, res) => {
+exports.updateProductById = async (req, res) => {
   const { name, client } = req.body;
   try {
     const pro = await Product.findById(req.params.id);
@@ -64,7 +64,7 @@ exports.putProduct = async (req, res) => {
   }
 };
 
-exports.deleteProduct = async (req, res) => {
+exports.removeProductById = async (req, res) => {
   try {
     const pro = await Product.findById(req.params.id);
     if (pro) {

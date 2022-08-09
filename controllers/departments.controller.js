@@ -41,7 +41,7 @@ exports.postDepartment = async (req, res) => {
   }
 };
 
-exports.putDepartment = async (req, res) => {
+exports.updateDepartmentById = async (req, res) => {
   const { name } = req.body;
   try {
     const dep = await Department.findById(req.params.id);
@@ -59,7 +59,7 @@ exports.putDepartment = async (req, res) => {
   }
 };
 
-exports.deleteDepartment = async (req, res) => {
+exports.removeDepartmentById = async (req, res) => {
   try {
     const dep = await Department.findById(req.params.id);
     if (dep) {

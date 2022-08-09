@@ -10,8 +10,8 @@ router.get('/employees/:id', EmployeesController.getEmployeeById);
 
 router.post('/employees', EmployeesController.postEmployee);
 
-router.put('/employees/:id', EmployeesController.putEmployee);
+router.put('/employees/:id', EmployeesController.updateEmployeeById);
 
-router.delete('/employees/:id', EmployeesController.deleteEmployee);
+router.delete('/employees/:id', EmployeesController.removeEmployeeById);
 
 module.exports = router;

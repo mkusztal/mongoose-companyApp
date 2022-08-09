@@ -45,7 +45,7 @@ exports.postEmployee = async (req, res) => {
   }
 };
 
-exports.putEmployee = async (req, res) => {
+exports.updateEmployeeById = async (req, res) => {
   const { firstName, lastName, department } = req.body;
   try {
     const emp = await Employee.findById(req.params.id).populate('department');
@@ -69,7 +69,7 @@ exports.putEmployee = async (req, res) => {
   }
 };
 
-exports.deleteEmployee = async (req, res) => {
+exports.removeEmployeeById = async (req, res) => {
   try {
     const emp = Employee.findById(req.params.id);
     if (emp) {

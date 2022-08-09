@@ -10,8 +10,8 @@ router.get('/departments/:id', DepartmentController.getDepartmentById);
 
 router.post('/departments', DepartmentController.postDepartment);
 
-router.put('/departments/:id', DepartmentController.putDepartment);
+router.put('/departments/:id', DepartmentController.updateDepartmentById);
 
-router.delete('/departments/:id', DepartmentController.deleteDepartment);
+router.delete('/departments/:id', DepartmentController.removeDepartmentById);
 
 module.exports = router;
