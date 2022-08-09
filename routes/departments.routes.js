@@ -8,7 +8,7 @@ router.get('/departments/random', DepartmentController.getRandomDepartment);
 
 router.get('/departments/:id', DepartmentController.getDepartmentById);
 
-router.post('/departments', DepartmentController.postDepartment);
+router.post('/departments', DepartmentController.addDepartment);
 
 router.put('/departments/:id', DepartmentController.updateDepartmentById);
 

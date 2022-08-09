@@ -30,7 +30,7 @@ exports.getEmployeeById = async (req, res) => {
   }
 };
 
-exports.postEmployee = async (req, res) => {
+exports.addEmployee = async (req, res) => {
   const { firstName, lastName, department } = req.body;
   try {
     const newEmployee = new Employee({

@@ -30,7 +30,7 @@ exports.getProductById = async (req, res) => {
   }
 };
 
-exports.postProduct = async (req, res) => {
+exports.addProduct = async (req, res) => {
   const { name, client } = req.body;
   try {
     const newProduct = new Product({ name: name, client: client });

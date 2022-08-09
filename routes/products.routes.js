@@ -8,7 +8,7 @@ router.get('/products/random', ProductsController.getRandomProduct);
 
 router.get('/products/:id', ProductsController.getProductById);
 
-router.post('/products', ProductsController.postProduct);
+router.post('/products', ProductsController.addProduct);
 
 router.put('/products/:id', ProductsController.updateProductById);
 

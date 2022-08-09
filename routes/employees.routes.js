@@ -8,7 +8,7 @@ router.get('/employees/random', EmployeesController.getRandomEmployee);
 
 router.get('/employees/:id', EmployeesController.getEmployeeById);
 
-router.post('/employees', EmployeesController.postEmployee);
+router.post('/employees', EmployeesController.addEmployee);
 
 router.put('/employees/:id', EmployeesController.updateEmployeeById);
 

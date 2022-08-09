@@ -30,7 +30,7 @@ exports.getDepartmentById = async (req, res) => {
   }
 };
 
-exports.postDepartment = async (req, res) => {
+exports.addDepartment = async (req, res) => {
   const { name } = req.body;
   try {
     const newDepartment = new Department({ name: name });
