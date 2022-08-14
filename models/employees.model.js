@@ -7,7 +7,7 @@ const employeesSchema = new mongoose.Schema({
     type: String,
     required: true,
     ref: 'Department',
-    minlength: 3,
+    minlength: 2,
     maxlength: 20,
   },
 });
