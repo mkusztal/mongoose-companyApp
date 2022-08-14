@@ -3,16 +3,16 @@ const expect = require('chai').expect;
 const mongoose = require('mongoose');
 
 describe('Department', () => {
+  after(() => {
+    mongoose.models = {};
+  });
+
   it('should throw an error if no "name" arg', () => {
     // create new Department, but don't set `name` attr value
     const dep = new Department({});
 
     dep.validate((err) => {
       expect(err.errors.name).to.exist;
-    });
-
-    after(() => {
-      mongoose.models = {};
     });
   });
 
