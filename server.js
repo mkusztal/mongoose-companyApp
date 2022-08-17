@@ -30,7 +30,7 @@ if (NODE_ENV === 'production') dbUri = 'url to remote db';
 else if (NODE_ENV === 'test') dbUri = 'mongodb://localhost:27017/companyDBtest';
 else dbUri = 'mongodb://localhost:27017/companyDB';
 
-mongoose.connect('mongodb://localhost:27017/companyDB', {
+mongoose.connect(dbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
