@@ -4,16 +4,16 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "chai": "4.2.0",
-    "chai-http": "4.3.0",
+    "chai": "4.5.0",
+    "chai-http": "4.4.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mocha": "6.2.1",
-    "mongodb": "^3.3.2",
-    "mongoose": "5.7.1",
-    "nodemon": "^1.19.1",
-    "onchange": "6.1.0",
-    "tap": "^16.3.0"
+    "express": "^4.19.2",
+    "mocha": "6.2.3",
+    "mongodb": "^3.7.4",
+    "mongoose": "5.13.22",
+    "nodemon": "^1.19.4",
+    "onchange": "6.1.1",
+    "tap": "^16.3.10"
   },
   "scripts": {
     "start": "nodemon server.js",
